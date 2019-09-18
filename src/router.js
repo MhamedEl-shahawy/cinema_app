@@ -1,6 +1,40 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+
+const Movies = resolve =>{
+  require.ensure(['./views/Home.vue'],()=>{
+      resolve(require('./views/Home.vue'));
+  });
+};
+const Movies_popular = resolve =>{
+  require.ensure(['./views/popular.vue'],()=>{
+      resolve(require('./views/popular.vue'));
+  });
+};
+
+const Movies_trend = resolve =>{
+  require.ensure(['./views/trend.vue'],()=>{
+      resolve(require('./views/trend.vue'));
+  });
+};
+
+const Movies_top = resolve =>{
+  require.ensure(['./views/top.vue'],()=>{
+      resolve(require('./views/top.vue'));
+  });
+};
+
+const Movies_upcoming = resolve =>{
+  require.ensure(['./views/upcoming.vue'],()=>{
+      resolve(require('./views/upcoming.vue'));
+  });
+};
+
+const Movies_tv = resolve =>{
+  require.ensure(['./views/tv.vue'],()=>{
+      resolve(require('./views/tv.vue'));
+  });
+};
 
 
 Vue.use(Router)
@@ -10,7 +44,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Movies
     },
     {
       path: '/tv',
@@ -18,9 +52,7 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: function () { 
-        return import(/* webpackChunkName: "about" */ './views/tv.vue')
-      }
+      component:Movies_tv 
     },
        {
       path: '/trend',
@@ -28,9 +60,7 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: function () { 
-        return import(/* webpackChunkName: "about" */ './views/trend.vue')
-      }
+      component:Movies_trend 
      },
       {
       path: '/upcoming',
@@ -38,9 +68,8 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: function () { 
-        return import(/* webpackChunkName: "about" */ './views/upcoming.vue')
-      }
+      component:Movies_upcoming 
+
     },
      {
       path: '/popular',
@@ -48,9 +77,7 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: function () { 
-        return import(/* webpackChunkName: "about" */ './views/popular.vue')
-      }
+      component:Movies_popular
     },
      {
       path: '/top',
@@ -58,9 +85,7 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: function () { 
-        return import(/* webpackChunkName: "about" */ './views/top.vue')
-      }
+    component:Movies_top
     },
      {
       path: '/details/:id/:name',
@@ -82,16 +107,7 @@ export default new Router({
         return import(/* webpackChunkName: "about" */ './views/search.vue')
       }
     },
-    {
-      path: '/tv',
-      name: 'tv',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: function () { 
-        return import(/* webpackChunkName: "about" */ './views/tv.vue')
-      }
-    },
+   
     {
       path: '/cast/:id',
       name: 'cast',

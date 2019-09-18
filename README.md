@@ -1,29 +1,29 @@
-# movies
+# CINEMACRUSH App
+CinemaCrush is your beautiful collection of popular, top rated, box office and upcoming movies. Discover latest movie trailers and reviews. Show your LOVE of movies.
 
-## Project setup
-```
-npm install
-```
+ 
+## INFO ABOUT BUILD
+   cinam app made with Vue, Vue Router and vue-resource to fetche movie data from the TMDB API
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### After clone 
 
-### Compiles and minifies for production
-```
-npm run build
+```bash
+  install all packages
 ```
 
-### Run your tests
-```
-npm run test
-```
+### npm install
 
-### Lints and fixes files
-```
-npm run lint
-```
+#### npm run serve
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+##### Demo
+ https://cinemacrush-62a3f.firebaseapp.com
+
+
+## Support Me
+
+ Give me star Thank You
+
+
+#### CopyRight
+
+For MohamedShahawy

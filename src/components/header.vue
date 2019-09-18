@@ -1,125 +1,94 @@
 <template>
     <div class="head">
-         <header>
-     
-      <nav>
-  <div class="container">
-    <a href="#" id="brand"><img src="../assets/cinemacrush-logo.png" /></a>
-    <button class="show_me">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    
-    <ul class="navbar-menu hide">
-      <router-link to="/" tag="li"><a href="#">Home</a></router-link>
-      <router-link to="/popular" tag="li"><a href="#">Popular</a></router-link>
-      <router-link to="/top" tag="li"><a href="#">Top Rated</a></router-link>
-      <router-link to="/upcoming" tag="li"><a href="#">Upcoming</a></router-link>
-      <router-link to="/trend" tag="li"><a href="#">Trending</a></router-link>
-      <router-link to="/tv" tag="li"><a href="#">TV Show</a></router-link>
-      <router-link to="/search" tag="li"><a href="#">Search</a></router-link>
-    </ul>
-  </div>
-</nav>
+    <div class="menu" >
+      <a><img src="../assets/cinemacrush-logo.png"  @click="show_nav = !show_nav" /></a> 
+      <v-icon name="align-right" scale="2"  />
+    </div>
 
-    </header>
+      <nav v-show="show_nav">
+               <v-icon name="align-right" scale="2"  />
+
+         <ul> 
+
+            <router-link to="/" tag="li">Home</router-link>
+      <router-link to="/popular" tag="li">Popular</router-link>
+      <router-link to="/top" tag="li">Top Rated</router-link>
+      <router-link to="/upcoming" tag="li">Upcoming</router-link>
+      <router-link to="/trend" tag="li">Trending</router-link>
+      <router-link to="/tv" tag="li">TV Show</router-link>
+      <router-link to="/search" tag="li">Search</router-link>
+         </ul>
+
+      </nav>
+
      <div class="land">
     <p>Latest movies and movie trailers</p>
     <p>CinemaCrush is your beautiful collection of popular, top rated, box office and upcoming movies. Discover latest movie trailers and reviews. Show your LOVE of movies.</p>
  </div> 
   </div>
+  </div>
+
 </template>
 <script>
+import Icon from 'vue-awesome/components/Icon'
 
 
   export default {
     name:"header",
-   
+    components: {
+    'v-icon': Icon
+  },
+  data(){
+     return{
+       show_nav:false,
+     }  
+  },
+ methods:{
+   show(){
+     alert("show me")
+   }
+ }
+
     
 }
 </script>
 <style lang="scss" scoped>
-.head{
+.menu{
+   position:relative;
    width:100%;
-   overflow-x: hidden;
-   position: relative;
-font-family: 'Titillium Web', sans-serif;
-    color: #fff;
-
-}
-#brand img{
-   max-width:100%; 
-}
-nav a {
-  display: inline-block;
-  color: #fff;
-  text-decoration: none;
-}
-nav a span{
-   font-weight: bolder;
-}
-nav {
-  background: #000;
-  height: 70px;
-  line-height: 80px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  transition: all 0.5s;
+  svg{
+    position:absolute;
+    right:0%;
+   cursor:pointer;
+  }
 }
 
-nav.scrollUp {
-  transform: translateY(-80px);
+nav{
+    height:100vh;
+   background:#2d3436;
+   width:25vw;
+   position:fixed;
+   right:0;
+   top:0;
+   z-index:999;
+   overflow:hidden;
+   padding:2.3em;
+   svg{
+    position:absolute;
+    right:8%;
+   cursor:pointer;
+  }
+ul{
+    margin-top:4em;
+
+   li{
+    line-height:2.4em;
+    border-bottom: 1px dotted #b2bec3;
+    font-size:1.2em;
+   cursor:pointer;
+
+   }
 }
-
-nav ul.navbar-menu {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-  float: right;
-   transition-duration:0.5s;
-
-}
-
-nav ul.navbar-menu li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-nav ul.navbar-menu li a {
-  color: #fff;
-  font-size: 15px;
-}
-
-nav a#brand {
-  text-transform: uppercase;
-  foat: left;
-  font-weight: 800;
-  font-size: 20px;
-}
-
-nav button {
-  background: none;
-  width: 30px;
-  height: 40px;
-  margin-top: 20px;
-  border: none;
-  float: right;
-  display: inline-block;
-  cursor: pointer;
-  display: none;
-}
-
-nav button span {
-  width: 30px;
-  height: 40px;
-  height: 2px;
-  background: #333;
-  display: block;
-  margin: 5px 0;
 }
 
 .land{
