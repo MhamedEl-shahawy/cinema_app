@@ -18,9 +18,9 @@
     "vue-social-sharing": "^2.4.6"
   },
   "devDependencies": {
-    "@vue/cli-service": "^3.11.0",
+    "@vue/cli-service": "^5.0.8",
     "sass": "^1.18.0",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^13.2.0",
     "vue-template-compiler": "^2.6.10"
   },
   "postcss": {
